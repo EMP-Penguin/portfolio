@@ -158,6 +158,23 @@ a {
   transform: rotate(2deg);
 }
 
+.profile-photo-wrap {
+  aspect-ratio: 4 / 5;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(217, 111, 50, 0.18), rgba(47, 108, 146, 0.16)),
+    #efe4d5;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero-card ul {
   margin: 18px 0 0;
   padding: 0;
