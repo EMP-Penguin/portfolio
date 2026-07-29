@@ -122,6 +122,7 @@ const translations = {
 };
 
 const languageButtons = document.querySelectorAll("[data-language]");
+const languageStorageKey = "portfolio-language-v2";
 
 function applyLanguage(language) {
   const activeLanguage = translations[language] ? language : "en";
@@ -149,12 +150,11 @@ function applyLanguage(language) {
     button.setAttribute("aria-pressed", String(button.dataset.language === activeLanguage));
   });
 
-  localStorage.setItem("portfolio-language", activeLanguage);
+  localStorage.setItem(languageStorageKey, activeLanguage);
 }
 
-const storedLanguage = localStorage.getItem("portfolio-language");
-const browserLanguage = navigator.language.toLowerCase().startsWith("ko") ? "ko" : "en";
-applyLanguage(storedLanguage || browserLanguage);
+const storedLanguage = localStorage.getItem(languageStorageKey);
+applyLanguage(storedLanguage || "en");
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => applyLanguage(button.dataset.language));
