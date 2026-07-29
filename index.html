@@ -1,182 +1,217 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자기소개 | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=SUIT:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Hyukjoon John Lee - ROK Army Officer and medical student focused on military medicine, trauma care, and AI for healthcare and defense.">
+  <title>Hyukjoon John Lee | Military Medical Profile</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="hero">
-      <nav class="topbar">
-        <span class="brand">INTRO</span>
-        <a class="top-link" href="#contact">Contact</a>
-      </nav>
-
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">CREATIVE DEVELOPER</p>
-          <div class="hero-badges">
-            <span>Leadership</span>
-            <span>Medicine</span>
-            <span>Discipline</span>
-          </div>
-          <h1>
-            안녕하세요.<br>
-            세계 최고의 <br>
-            군의료 시스템을 만드는 <br>
-            군의관 <span>이혁준</span>입니다.
-          </h1>
-          <p class="summary">
-            기획 의도를 화면으로 설득력 있게 옮기고, 사용자가 머무르고 싶어지는 인터페이스를 만드는 일을 좋아합니다.
-            디자인 감각과 구현 완성도를 함께 챙기는 프런트엔드 중심 개발자입니다.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="#about">소개 보기</a>
-            <a class="button secondary" href="#projects">프로젝트</a>
-          </div>
-
-          <div class="hero-metrics">
-            <article>
-              <strong>2022</strong>
-              <span>육군 소위 임관</span>
-            </article>
-            <article>
-              <strong>2024~</strong>
-              <span>연세대학교 의과대학</span>
-            </article>
-            <article>
-              <strong>2 Tracks</strong>
-              <span>의학과 리더십의 결합</span>
-            </article>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <div class="profile-photo-wrap">
-            <img class="profile-photo" src="./Portrait.png" alt="프로필 사진">
-          </div>
-          <p class="card-label">PROFILE</p>
-          <ul>
-            <li><strong>이름</strong><span>홍길동</span></li>
-            <li><strong>직무</strong><span>Frontend Developer</span></li>
-            <li><strong>강점</strong><span>UI 구현, 반응형 웹, 사용자 경험</span></li>
-            <li><strong>관심사</strong><span>브랜딩, 인터랙션, 퍼포먼스</span></li>
-          </ul>
-        </aside>
+  <header class="global-nav">
+    <a class="brand" href="#hero">Hyukjoon John Lee</a>
+    <nav class="nav-links" aria-label="Primary navigation" data-i18n-aria="navAria">
+      <a href="#overview" data-i18n="navOverview">Overview</a>
+      <a href="#credentials" data-i18n="navCredentials">Credentials</a>
+      <a href="#experience" data-i18n="navExperience">Experience</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="languageAria">
+        <button type="button" data-language="ko" aria-pressed="false">한국어</button>
+        <button type="button" data-language="en" aria-pressed="true">English</button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="section intro" id="about">
-        <div class="section-heading">
-          <p class="section-kicker">About Me</p>
-          <h2>기술만 만드는 사람이 아니라, 인상을 설계하는 사람</h2>
+  <main>
+    <section class="tile hero-tile light-tile" id="hero">
+      <div class="tile-copy hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">ROK Army Officer &amp; Medical Student</p>
+        <h1>Hyukjoon John Lee</h1>
+        <p class="hero-focus" data-i18n="heroFocus">Military Medicine · Trauma Care · AI for Healthcare &amp; Defense</p>
+        <p class="tagline" data-i18n="heroTagline">Building stronger military medical systems by connecting clinical practice, operational leadership, and technology.</p>
+        <div class="cta-row">
+          <a class="button primary" href="#overview" data-i18n="viewProfile">View profile</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/johnhjlee" target="_blank" rel="noreferrer" data-i18n="linkedin">LinkedIn</a>
+          <a class="text-link" href="./assets/CV_Hyukjoon_John_Lee.pdf" download data-i18n="downloadCv">Download CV</a>
         </div>
+      </div>
+      <figure class="portrait-stage">
+        <img src="./Portrait.jpg" alt="Portrait of Hyukjoon John Lee" data-i18n-alt="portraitAlt">
+      </figure>
+      <a class="section-cue" href="#overview" aria-label="Continue to overview" data-i18n-aria="continueAria">↓</a>
+    </section>
 
-        <div class="intro-layout">
-          <article class="panel statement">
-            <p>
-              저는 보기 좋은 화면을 넘어서, 사용자 흐름이 자연스럽고 목적이 명확한 웹페이지를 만드는 데 집중합니다.
-              새로운 기술을 빠르게 익히는 편이며, 작은 디테일까지 다듬어 결과물의 완성도를 높이는 것을 중요하게 생각합니다.
-            </p>
-            <p>
-              협업에서는 의도를 분명히 공유하고, 구현에서는 구조와 유지보수성을 놓치지 않는 개발 방식을 지향합니다.
-            </p>
-          </article>
+    <section class="tile dark-tile" id="overview">
+      <div class="tile-copy narrow-copy">
+        <p class="eyebrow" data-i18n="overviewEyebrow">Profile</p>
+        <h2 data-i18n="overviewTitle">Medicine, military leadership, and technology in one mission.</h2>
+        <p data-i18n="overviewBody1">I am a medical student and Republic of Korea Army officer interested in trauma surgery, surgical critical care, and trauma systems. My work is shaped by both clinical training and operational leadership.</p>
+        <p data-i18n="overviewBody2">I aim to contribute to military medical systems that make better decisions under pressure, coordinate teams effectively, and use AI responsibly across healthcare and defense.</p>
+        <div class="interest-list" aria-label="Areas of interest" data-i18n-aria="interestsAria">
+          <span data-i18n="interest1">Trauma Surgery</span>
+          <span data-i18n="interest2">Surgical Critical Care</span>
+          <span data-i18n="interest3">Trauma Systems</span>
+          <span data-i18n="interest4">AI for Healthcare &amp; Defense</span>
+        </div>
+      </div>
+    </section>
 
-          <div class="panel strengths">
-            <h3>핵심 역량</h3>
-            <div class="tag-list">
-              <span>HTML/CSS</span>
-              <span>JavaScript</span>
-              <span>React</span>
-              <span>Responsive Web</span>
-              <span>UI Animation</span>
-              <span>Figma Handoff</span>
+    <section class="tile parchment-tile" id="credentials">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="credentialsEyebrow">Credentials</p>
+        <h2 data-i18n="credentialsTitle">Education and recognition</h2>
+      </div>
+
+      <div class="utility-grid">
+        <article class="utility-card">
+          <p class="card-kicker" data-i18n="education">Education</p>
+          <div class="entry">
+            <time>2024.03 - Present</time>
+            <div>
+              <h3>Yonsei University College of Medicine</h3>
+              <p>Seoul, Korea</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="section timeline">
-        <div class="section-heading">
-          <p class="section-kicker">Career</p>
-          <h2>나의 경력</h2>
-        </div>
-
-        <div class="timeline-list">
-          <article class="timeline-item">
-            <span class="year">2024~</span>
+          <div class="entry">
+            <time>2018.03 - 2022.03</time>
             <div>
-              <h3>연세대학교 의과대학 재학</h3>
-              <p>의학 분야에 대한 전문성을 쌓으며 학업을 이어가고 있습니다.</p>
-              <div class="timeline-tags">
-                <span>Medical Education</span>
-                <span>Academic Growth</span>
-              </div>
+              <h3>Korea Military Academy (KMA)</h3>
+              <p>Seoul, Korea</p>
             </div>
-          </article>
-          <article class="timeline-item">
-            <span class="year">2022</span>
+          </div>
+        </article>
+
+        <article class="utility-card">
+          <p class="card-kicker" data-i18n="honors">Honors &amp; Awards</p>
+          <div class="entry">
+            <time>2022.02</time>
             <div>
-              <h3>육군 소위 임관</h3>
-              <p>책임감과 리더십을 바탕으로 조직 내 역할을 수행하며 실무 경험을 쌓았습니다.</p>
-              <div class="timeline-tags">
-                <span>Leadership</span>
-                <span>Responsibility</span>
-              </div>
+              <h3 data-i18n="award1Title">Academic Excellence Award</h3>
+              <p data-i18n="award1Body">Department of Applied Physics, Korea Military Academy</p>
             </div>
-          </article>
-        </div>
-      </section>
+          </div>
+          <div class="entry">
+            <time>2022.02</time>
+            <div>
+              <h3 data-i18n="award2Title">Bolivian Army Commander's Award</h3>
+              <p data-i18n="award2Body">Award for Academic Excellence</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <section class="section projects" id="projects">
-        <div class="section-heading">
-          <p class="section-kicker">Projects</p>
-          <h2>눈에 보이는 결과로 증명한 작업</h2>
-        </div>
+    <section class="tile light-tile" id="experience">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="experienceEyebrow">Experience</p>
+        <h2 data-i18n="experienceTitle">Clinical practice and operational leadership</h2>
+      </div>
 
-        <div class="project-grid">
-          <article class="project-card accent-orange">
-            <p class="project-type">PROJECT 01</p>
-            <h3>브랜드 소개 웹사이트</h3>
-            <p>강한 첫인상과 부드러운 섹션 전환을 중심으로 구성한 랜딩 페이지.</p>
-          </article>
-          <article class="project-card accent-blue">
-            <p class="project-type">PROJECT 02</p>
-            <h3>반응형 포트폴리오</h3>
-            <p>모바일과 데스크톱 모두에서 읽기 좋은 비율과 레이아웃을 설계한 작업.</p>
-          </article>
-          <article class="project-card accent-green">
-            <p class="project-type">PROJECT 03</p>
-            <h3>인터랙티브 UI 실험</h3>
-            <p>스크롤 기반 애니메이션과 마우스 반응 요소를 적용한 실험형 페이지.</p>
-          </article>
+      <article class="feature">
+        <div class="feature-heading">
+          <div>
+            <p class="card-kicker" data-i18n="clinicalExperience">Clinical Experience</p>
+            <h3>Sub-Internship, Trauma Surgery</h3>
+            <p class="feature-place">Uijeongbu St. Mary's Hospital, Korea</p>
+          </div>
+          <time>2025.01.16 - 2025.01.24</time>
         </div>
-      </section>
+        <p data-i18n="clinicalBody">Participated in trauma resuscitations, surgical rounds, and perioperative patient care. Observed multidisciplinary trauma evaluation and emergency surgical decision-making.</p>
+      </article>
 
-      <section class="section contact" id="contact">
-        <div class="contact-card">
-          <p class="section-kicker">Contact</p>
-          <h2>함께 만들고 싶은 작업이 있다면 이야기해 주세요.</h2>
-          <p class="contact-text">
-            이메일, GitHub, 블로그 링크를 여기에 연결하면 자기소개 페이지를 실제 포트폴리오로 바로 활용할 수 있습니다.
-          </p>
+      <div class="section-subhead">
+        <h3 data-i18n="leadership">Leadership Activities</h3>
+      </div>
+      <div class="utility-grid leadership-grid">
+        <article class="utility-card compact-card">
+          <time>2022.06 - 2024.02</time>
+          <h3 data-i18n="leadership1Title">Platoon Leader &amp; Intelligence Officer</h3>
+          <p data-i18n="leadership1Body">Republic of Korea Army</p>
+        </article>
+        <article class="utility-card compact-card">
+          <time>2021.03 - 2021.09</time>
+          <h3 data-i18n="leadership2Title">Battalion Cadet Commander</h3>
+          <p>Korea Military Academy</p>
+        </article>
+        <article class="utility-card compact-card">
+          <time>2026.01 - Present</time>
+          <h3 data-i18n="leadership3Title">Student Council Member</h3>
+          <p>Yonsei University College of Medicine</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="tile dark-tile" id="activities">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="activitiesEyebrow">Beyond the curriculum</p>
+        <h2 data-i18n="activitiesTitle">Service, research, and international communication</h2>
+      </div>
+
+      <div class="utility-grid activity-grid dark-grid">
+        <article class="utility-card dark-card compact-card">
+          <time>2023.10</time>
+          <h3 data-i18n="activity1Title">Interpreter Officer</h3>
+          <p>ADEX (Aerospace &amp; Defense Exhibition of Korea)</p>
+        </article>
+        <article class="utility-card dark-card compact-card">
+          <time>2025.07</time>
+          <h3 data-i18n="activity2Title">Observer</h3>
+          <p>1st Symposium of Emergency Surgery Research Society</p>
+        </article>
+        <article class="utility-card dark-card compact-card">
+          <time>2025.08</time>
+          <h3 data-i18n="activity3Title">Volunteer Medical Service</h3>
+          <p data-i18n="activity3Body">Rural Community Outreach Program</p>
+        </article>
+      </div>
+
+      <div class="language-panel">
+        <p class="card-kicker" data-i18n="languages">Language Skills</p>
+        <div class="language-row">
+          <strong>English</strong>
+          <span data-i18n="englishLevel">Fluent · Professional working proficiency in medical settings</span>
+          <small>TOEFL 100 (2026.04.18) · TOEIC 975 (2023.09.24) · TEPS 488 (2023.03.21)</small>
+        </div>
+        <div class="language-row">
+          <strong>Korean</strong>
+          <span data-i18n="koreanLevel">Native</span>
+        </div>
+        <div class="language-row">
+          <strong>Spanish</strong>
+          <span data-i18n="spanishLevel">Beginner</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="tile contact-tile parchment-tile" id="contact">
+      <div class="contact-layout">
+        <div class="tile-copy contact-copy">
+          <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+          <h2 data-i18n="contactTitle">Let's build better systems for care under pressure.</h2>
+          <p data-i18n="contactBody">For conversations about military medicine, trauma systems, and responsible AI across healthcare and defense, reach out by email or LinkedIn.</p>
           <div class="contact-links">
-            <a href="mailto:hello@example.com">hello@example.com</a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.notion.so/" target="_blank" rel="noreferrer">Portfolio Note</a>
+            <a class="button primary" href="mailto:HYUKJOON.LEE22@med.yuhs.ac" data-i18n="emailMe">Email me</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/johnhjlee" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="text-link" href="./assets/CV_Hyukjoon_John_Lee.pdf" download data-i18n="downloadCv">Download CV</a>
           </div>
         </div>
-      </section>
-    </main>
-  </div>
+        <figure class="qr-card">
+          <img src="./assets/portfolio-qr.png" alt="QR code for Hyukjoon John Lee's portfolio" data-i18n-alt="qrAlt">
+          <figcaption>
+            <strong data-i18n="qrTitle">Share this profile</strong>
+            <span>emp-penguin.github.io/portfolio</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="current-year"></span> Hyukjoon John Lee</p>
+    <a href="#hero" data-i18n="backToTop">Back to top</a>
+  </footer>
 
   <script src="./script.js"></script>
 </body>
