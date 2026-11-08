@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import PhotoStrip from '../components/PhotoStrip.astro';
+import photos from '../data/selected-photos.json';
+---
+<Base page="experience" titleEn="Hyukjoon John Lee | Experiences" titleKo="이혁준 | Experiences" descriptionEn="Selected experiences." descriptionKo="이혁준의 경험.">
+<div class="page-wrap interior-page experience-index">
+  <div class="eyebrow">EXPERIENCES</div>
+  <div class="experience-intro"><h1>Experiences</h1><p><T en="Explore the experiences behind my work and interests." ko="관심 있는 키워드를 누르면 경험을 자세히 볼 수 있습니다." /></p></div>
+  <div class="experience-grid">
+    <section class="experience-group"><span class="group-number">01</span><h2>Military Leadership</h2>
+      <details><summary><T en="Army service" ko="육군 장교 복무" /></summary><p><T en="Served as a platoon leader and intelligence officer at the 1st Security Group, 2022–2024." ko="2022년부터 2024년까지 1경비단에서 소대장과 정보장교로 복무했습니다." /></p><PhotoStrip photos={photos.army} label="육군 복무 사진" /></details>
+      <details><summary>TCCC</summary><p><T en="As a cadet, I proposed attending instructor training and became an instructor." ko="생도 시절 교관과정 참여를 건의해 TCCC 교관이 되었습니다." /></p><PhotoStrip photos={photos.tccc} label="TCCC 교육 사진" /></details>
+    </section>
+    <section class="experience-group"><span class="group-number">02</span><h2>Medicine &amp; Trauma</h2>
+      <details><summary><T en="Trauma surgery sub-internship" ko="외상외과 서브인턴십" /></summary><p><T en="In January 2025, I joined a trauma surgery sub-internship at Uijeongbu St. Mary’s Hospital." ko="2025년 1월 의정부성모병원에서 외상외과 서브인턴십에 참여했습니다." /></p><PhotoStrip photos={photos.trauma} label="외상외과 경험 사진" /></details>
+      <details><summary><T en="Trauma and academic meetings" ko="외상 분야와 학회" /></summary><p><T en="I have attended academic meetings and am preparing for an STC observership." ko="외상 분야를 배우기 위해 학회에 참여했고, STC 옵저버십을 준비하고 있습니다." /></p><PhotoStrip photos={photos.academic} label="외과 캠프와 학회 사진" /></details>
+    </section>
+    <section class="experience-group"><span class="group-number">03</span><h2>AI &amp; Data</h2>
+      <details><summary>D4D Hackathon</summary><p>Project Pretzel · 24 hours</p><PhotoStrip photos={photos.d4d} label="D4D 해커톤 사진" /></details>
+      <details><summary>AI Healthcare Challenge</summary><p><T en="An experience exploring AI in healthcare." ko="의료와 AI의 접점을 탐색한 경험입니다." /></p></details>
+      <details><summary><T en="Data bootcamp" ko="데이터 부트캠프" /></summary><p><T en="Learning and exploring data science." ko="데이터과학을 배우고 탐색했습니다." /></p><PhotoStrip photos={photos.bootcamp} label="데이터 부트캠프 사진" /></details>
+    </section>
+    <section class="experience-group"><span class="group-number">04</span><h2>Teaching &amp; Community</h2>
+      <details><summary><T en="Anatomy and osteology study" ko="해부학 강의와 골학 스터디" /></summary><p><T en="Peer teaching and study planning." ko="동료와 후배를 위한 해부학 강의와 골학 스터디를 준비했습니다." /></p><PhotoStrip photos={photos.anatomy} label="해부학 교육 사진" /></details>
+      <details><summary>MedTED</summary><p><T en="Presentations and speaking practice with fellow students." ko="동료들과 발표와 말하기를 연습했습니다." /></p><PhotoStrip photos={photos.medted} label="MedTED 발표 사진" /></details>
+      <details><summary><T en="Volunteer service" ko="봉사활동" /></summary><p><T en="Community meal and summer volunteer activities." ko="급식과 여름 봉사활동에 참여했습니다." /></p><PhotoStrip photos={photos.volunteer} label="봉사활동 사진" /></details>
+    </section>
+  </div>
+</div>
+</Base>

@@ -1,0 +1,179 @@
+---
+import { ClientRouter, slide } from 'astro:transitions';
+import T from '../components/T.astro';
+import '../styles.css';
+import '../dark-theme.css';
+
+interface Props {
+  page: 'overview' | 'experience' | 'thoughts' | 'contacts' | 'exploration' | 'cv' | 'about';
+  titleEn: string;
+  titleKo: string;
+  descriptionEn: string;
+  descriptionKo: string;
+  articleLanguage?: 'en' | 'ko';
+}
+const { page, titleEn, titleKo, descriptionEn, descriptionKo, articleLanguage } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base}${path}`;
+const links = [
+  { id: 'about', href: `${base}about/`, en: 'About', ko: 'About' },
+  { id: 'experience', href: `${base}experience/`, en: 'Experiences', ko: 'Experiences' },
+  { id: 'exploration', href: `${base}exploration/`, en: 'Exploration', ko: 'Exploration' },
+  { id: 'cv', href: `${base}cv/`, en: 'CV', ko: 'CV' },
+] as const;
+const canonical = new URL(Astro.url.pathname, 'https://emp-penguin.github.io').toString();
+---
+<!doctype html>
+<html lang="ko" data-page={page} data-title-en={titleEn} data-title-ko={titleKo} data-description-en={descriptionEn} data-description-ko={descriptionKo}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={descriptionEn} />
+    <meta name="theme-color" content="#111416" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
+    <title>{titleEn}</title>
+    <meta property="og:type" content={page === 'thoughts' && articleLanguage ? 'article' : 'website'} />
+    <meta property="og:title" content={titleEn} />
+    <meta property="og:description" content={descriptionEn} />
+    <meta property="og:url" content={canonical} />
+    <ClientRouter />
+    <script is:inline>
+      try { document.documentElement.lang = localStorage.getItem('portfolio-language-v2') === 'en' ? 'en' : 'ko'; } catch (_) {}
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="home-link" href={base} aria-label="Home">HJ<span>.</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation" data-aria-en="Primary navigation" data-aria-ko="주요 메뉴">
+          {links.map(link => <a href={link.href} aria-current={page === link.id ? 'page' : undefined} data-en={link.en} data-ko={link.ko}>{link.en}</a>)}
+        </nav>
+        <div class="language-switch" role="group" aria-label="Language" data-aria-en="Language" data-aria-ko="언어 선택">
+          <button type="button" data-language="en" aria-pressed="true">EN</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-language="ko" aria-pressed="false">KO</button>
+        </div>
+      </div>
+    </header>
+    <main id="main-content" transition:animate={slide({ duration: '0.25s' })}>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <span>© {new Date().getFullYear()} Hyukjoon John Lee</span>
+    </footer>
+    <dialog class="lightbox" aria-label="사진 크게 보기" data-aria-en="Photo viewer" data-aria-ko="사진 크게 보기">
+      <div class="lightbox-panel">
+        <button class="lightbox-close" type="button" aria-label="닫기" data-aria-en="Close" data-aria-ko="닫기">×</button>
+        <button class="lightbox-prev" type="button" aria-label="이전 사진" data-aria-en="Previous photo" data-aria-ko="이전 사진">‹</button>
+        <img class="lightbox-image" alt="" />
+        <button class="lightbox-next" type="button" aria-label="다음 사진" data-aria-en="Next photo" data-aria-ko="다음 사진">›</button>
+        <div class="lightbox-count" aria-live="polite"></div>
+      </div>
+    </dialog>
+    <script>
+      let activePhotos: HTMLAnchorElement[] = [];
+      let photoIndex = 0;
+      let photoTrigger: HTMLAnchorElement | null = null;
+      function updateLightbox() {
+        const dialog = document.querySelector<HTMLDialogElement>('.lightbox');
+        const photo = activePhotos[photoIndex];
+        if (!dialog || !photo) return;
+        const image = dialog.querySelector<HTMLImageElement>('.lightbox-image');
+        const count = dialog.querySelector<HTMLElement>('.lightbox-count');
+        if (image) { image.src = photo.href; image.alt = photo.querySelector('img')?.alt || ''; }
+        if (count) count.textContent = `${photoIndex + 1} / ${activePhotos.length}`;
+        dialog.querySelectorAll<HTMLButtonElement>('.lightbox-prev, .lightbox-next').forEach(button => { button.hidden = activePhotos.length < 2; });
+      }
+      document.addEventListener('click', event => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        const link = target.closest<HTMLAnchorElement>('[data-photo-gallery] a');
+        if (link && !event.defaultPrevented && event.button === 0 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+          const dialog = document.querySelector<HTMLDialogElement>('.lightbox');
+          const gallery = link.closest<HTMLElement>('[data-photo-gallery]');
+          if (!dialog || !gallery || typeof dialog.showModal !== 'function') return;
+          event.preventDefault();
+          activePhotos = Array.from(gallery.querySelectorAll<HTMLAnchorElement>('a'));
+          photoIndex = activePhotos.indexOf(link); photoTrigger = link;
+          updateLightbox(); dialog.showModal(); document.documentElement.classList.add('lightbox-open');
+        }
+        const dialog = document.querySelector<HTMLDialogElement>('.lightbox');
+        if (!dialog?.open) return;
+        if (target.closest('.lightbox-close') || target === dialog || target.classList.contains('lightbox-panel')) dialog.close();
+        else if (target.closest('.lightbox-prev')) { photoIndex = (photoIndex - 1 + activePhotos.length) % activePhotos.length; updateLightbox(); }
+        else if (target.closest('.lightbox-next')) { photoIndex = (photoIndex + 1) % activePhotos.length; updateLightbox(); }
+      });
+      document.addEventListener('keydown', event => {
+        const dialog = document.querySelector<HTMLDialogElement>('.lightbox');
+        if (!dialog?.open || activePhotos.length < 2) return;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault(); photoIndex = (photoIndex + (event.key === 'ArrowRight' ? 1 : -1) + activePhotos.length) % activePhotos.length; updateLightbox();
+        }
+      });
+      document.addEventListener('close', event => {
+        if (event.target instanceof HTMLDialogElement && event.target.classList.contains('lightbox')) {
+          document.documentElement.classList.remove('lightbox-open');
+          photoTrigger?.focus(); photoTrigger = null; activePhotos = [];
+        }
+      }, true);
+      document.addEventListener('astro:before-swap', () => { document.documentElement.classList.remove('lightbox-open'); });
+      function applyLanguage() {
+        const html = document.documentElement;
+        const language = html.lang === 'ko' ? 'ko' : 'en';
+        document.querySelectorAll<HTMLElement>('[data-en][data-ko]').forEach(el => {
+          el.textContent = el.dataset[language] || '';
+        });
+        document.querySelectorAll<HTMLElement>('[data-aria-en][data-aria-ko]').forEach(el => {
+          el.setAttribute('aria-label', el.dataset[`aria${language === 'ko' ? 'Ko' : 'En'}`] || '');
+        });
+        document.querySelectorAll<HTMLImageElement>('[data-alt-en][data-alt-ko]').forEach(el => {
+          el.alt = el.dataset[`alt${language === 'ko' ? 'Ko' : 'En'}`] || '';
+        });
+        document.querySelectorAll<HTMLButtonElement>('[data-language]').forEach(button => {
+          button.setAttribute('aria-pressed', String(button.dataset.language === language));
+        });
+        document.title = html.dataset[language === 'ko' ? 'titleKo' : 'titleEn'] || document.title;
+        const desc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+        if (desc) desc.content = html.dataset[language === 'ko' ? 'descriptionKo' : 'descriptionEn'] || desc.content;
+        document.dispatchEvent(new CustomEvent('portfolio:language', { detail: language }));
+      }
+      document.addEventListener('astro:before-preparation', event => {
+        if (event.navigationType === 'traverse') return;
+        const base = import.meta.env.BASE_URL;
+        const order = (path: string) => {
+          const local = path.startsWith(base) ? path.slice(base.length) : path;
+          if (local.startsWith('experience/')) return 1;
+          if (local.startsWith('thoughts/')) return 2;
+          if (local.startsWith('contacts/')) return 3;
+          return 0;
+        };
+        const fromOrder = order(event.from.pathname);
+        const toOrder = order(event.to.pathname);
+        const fromDepth = event.from.pathname.split('/').filter(Boolean).length;
+        const toDepth = event.to.pathname.split('/').filter(Boolean).length;
+        event.direction = toOrder < fromOrder || (toOrder === fromOrder && toDepth < fromDepth) ? 'back' : 'forward';
+      });
+      document.addEventListener('astro:before-swap', event => {
+        try { event.newDocument.documentElement.lang = localStorage.getItem('portfolio-language-v2') === 'en' ? 'en' : 'ko'; } catch (_) {}
+      });
+      document.addEventListener('astro:page-load', () => {
+        applyLanguage();
+        document.querySelectorAll<HTMLButtonElement>('[data-language]').forEach(button => {
+          button.onclick = () => {
+            const language = button.dataset.language === 'ko' ? 'ko' : 'en';
+            document.documentElement.lang = language;
+            try { localStorage.setItem('portfolio-language-v2', language); } catch (_) {}
+            applyLanguage();
+          };
+        });
+        document.querySelectorAll<HTMLAnchorElement>('[data-back-thoughts]').forEach(back => {
+          try {
+            const url = sessionStorage.getItem('thoughts-last-url');
+            if (url?.startsWith(import.meta.env.BASE_URL + 'thoughts/')) back.href = url;
+          } catch (_) {}
+        });
+      });
+    </script>
+  </body>
+</html>

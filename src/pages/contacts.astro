@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import content from '../data/content.json';
+const base = import.meta.env.BASE_URL;
+---
+<Base page="contacts" titleEn="Hyukjoon John Lee | Contacts" titleKo="Hyukjoon John Lee | 연락처" descriptionEn="Contact Hyukjoon John Lee about military medicine, trauma care, and responsible AI." descriptionKo="군진의학, 외상 진료, 책임 있는 AI에 관해 Hyukjoon John Lee에게 연락하세요.">
+  <section class="page-wrap interior-page contact-page">
+    <div class="eyebrow"><span class="serial">04 / 04</span><T en="GET IN TOUCH" ko="연락하기" /></div>
+    <div class="contact-grid">
+      <div class="contact-main">
+        <h1><T en={content.translations.en.contact.title} ko={content.translations.ko.contact.title} /></h1>
+        <p class="contact-detail"><T en={content.translations.en.contact.body} ko={content.translations.ko.contact.body} /></p>
+        <div class="contact-actions">
+          <a class="contact-action" href={`mailto:${content.meta.email}`}><span><T en="Email" ko="이메일" /></span><strong>{content.meta.email}</strong><span aria-hidden="true">↗</span></a>
+          <a class="contact-action" href={content.meta.linkedin} target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>johnhjlee</strong><span aria-hidden="true">↗</span></a>
+          <a class="contact-action" href="https://www.instagram.com/heock_yi/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><strong>@heock_yi</strong><span aria-hidden="true">↗</span></a>
+          <a class="contact-action" href="https://blog.naver.com/heock_yi" target="_blank" rel="noopener noreferrer"><span><T en="Naver Blog" ko="네이버 블로그" /></span><strong>blog.naver.com/heock_yi</strong><span aria-hidden="true">↗</span></a>
+          <a class="contact-action" href={`${base}assets/CV_Hyukjoon_John_Lee.pdf`} download><span><T en="Curriculum vitae" ko="이력서" /></span><strong>Download PDF</strong><span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <figure class="qr-panel"><img src={`${base}assets/portfolio-qr.png`} width="240" height="240" alt="QR code for this portfolio" data-alt-en="QR code for this portfolio" data-alt-ko="이 포트폴리오의 QR 코드" /><figcaption><T en="Share this profile" ko="프로필 공유" /><small>emp-penguin.github.io/portfolio/</small></figcaption></figure>
+    </div>
+  </section>
+</Base>

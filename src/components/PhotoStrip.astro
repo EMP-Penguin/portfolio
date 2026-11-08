@@ -1,0 +1,8 @@
+---
+interface Props { photos: string[]; label: string; }
+const { photos, label } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<div class="photo-strip" aria-label={label} data-photo-gallery>
+  {photos.map((photo, index) => <a href={`${base}${photo}`} target="_blank" rel="noopener noreferrer" aria-label={`${label} ${index + 1}`}><img src={`${base}${photo}`} alt={`${label} ${index + 1}`} loading="lazy" decoding="async" /></a>)}
+</div>

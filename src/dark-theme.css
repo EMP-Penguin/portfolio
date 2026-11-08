@@ -1,0 +1,25 @@
+/* Dark color layer. Remove this import from Base.astro to return to the light palette. */
+:root {
+  color-scheme: dark;
+  --paper: #111416;
+  --soft: #1a2023;
+  --ink: #f2f3f2;
+  --muted: #b4c0c3;
+  --blue: #8ebfcd;
+  --line: #38464a;
+}
+
+.site-header { background: rgba(17, 20, 22, .95); }
+.summary p { color: #c2ccce; }
+.summary .summary-lead { color: var(--ink); }
+.primary-link { background: var(--ink); color: #111416; }
+.primary-link:hover { background: var(--blue); color: #111416; }
+.secondary-link { color: var(--ink); }
+.search-field { background: #1a2023; }
+.search-field input::placeholder { color: #9caeb2; }
+.category-row button[aria-pressed=true],
+.category-row button:hover { background: #26363b; }
+.post-number, .empty-state > span, .meta-separator { color: #91a4a9; }
+.article-body pre { background: #1a2023; }
+.qr-panel img { background: #fff; }
+

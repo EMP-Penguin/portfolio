@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import content from '../data/content.json';
+const { shared, translations } = content;
+const cv = `${import.meta.env.BASE_URL}assets/CV_Hyukjoon_John_Lee.pdf`;
+---
+<Base page="cv" titleEn="Hyukjoon John Lee | CV" titleKo="이혁준 | CV" descriptionEn="Education, clinical learning, leadership, and service of Hyukjoon John Lee." descriptionKo="Hyukjoon John Lee의 학력, 임상 학습, 리더십과 봉사 활동.">
+  <div class="page-wrap interior-page experience-page cv-resume">
+    <div class="eyebrow"><span class="serial">02 / 04</span><T en="BACKGROUND" ko="이력" /></div>
+    <div class="overview-actions"><a class="primary-link" href={cv} target="_blank" rel="noopener noreferrer"><T en="Open PDF" ko="PDF 열기" /> ↗</a><a class="secondary-link" href={cv} download><T en="Download PDF" ko="PDF 다운로드" /> ↓</a></div>
+    <div class="page-heading"><h1>CV</h1><p><T en="A record of learning, service, and leadership across military and medical settings." ko="군과 의료 현장에서 쌓아 온 배움, 봉사, 리더십의 기록입니다. 읽고 달리며 호기심을 이어가는 삶의 기록은 생각 페이지에 담았습니다." /></p></div>
+    <section class="experience-section" aria-labelledby="education-heading">
+      <div class="section-label"><span>01</span><h2 id="education-heading"><T en="Education & recognition" ko="학력과 수상" /></h2></div>
+      <div class="section-entries">
+        {shared.education.map(item => <div class="experience-item"><time>{item.period}</time><div><h3>{item.institution}</h3><p>{item.location}</p></div></div>)}
+        {shared.honors.map(item => <div class="experience-item"><time>{item.date}</time><div><h3><T en={translations.en.credentials[item.key as 'academicExcellence' | 'bolivianArmyAward'].title} ko={translations.ko.credentials[item.key as 'academicExcellence' | 'bolivianArmyAward'].title} /></h3><p><T en={translations.en.credentials[item.key as 'academicExcellence' | 'bolivianArmyAward'].body} ko={translations.ko.credentials[item.key as 'academicExcellence' | 'bolivianArmyAward'].body} /></p></div></div>)}
+      </div>
+    </section>
+    <section class="experience-section" aria-labelledby="clinical-heading">
+      <div class="section-label"><span>02</span><h2 id="clinical-heading"><T en="Clinical learning & leadership" ko="임상 학습과 리더십" /></h2></div>
+      <div class="section-entries">
+        <div class="experience-item"><time>{shared.clinicalExperience.period}</time><div><h3>{shared.clinicalExperience.title}</h3><p class="institution">{shared.clinicalExperience.organization}</p><p><T en={translations.en.experience.clinicalBody} ko={translations.ko.experience.clinicalBody} /></p></div></div>
+        {shared.leadership.filter(item => item.key !== 'cadetCommander').map(item => <div class="experience-item"><time>{item.period}</time><div><h3><T en={translations.en.experience[item.key as 'platoonLeader' | 'studentCouncil']} ko={translations.ko.experience[item.key as 'platoonLeader' | 'studentCouncil']} /></h3><p>{item.organization}</p></div></div>)}
+      </div>
+    </section>
+    <section class="experience-section" aria-labelledby="activities-heading">
+      <div class="section-label"><span>03</span><h2 id="activities-heading"><T en="Academic, service & international activities" ko="학술·봉사·국제 활동" /></h2></div>
+      <div class="section-entries">
+        {shared.activities.map(item => <div class="experience-item"><time>{item.date}</time><div><h3><T en={translations.en.activities[item.key as 'adexInterpreter' | 'symposiumObserver' | 'legacyVolunteer']} ko={translations.ko.activities[item.key as 'adexInterpreter' | 'symposiumObserver' | 'legacyVolunteer']} /></h3><p>{item.organization}</p></div></div>)}
+        <div class="language-summary"><h3><T en="Languages" ko="언어" /></h3><p><strong>English</strong> · {shared.languages[0].scores}</p><p><strong>Korean</strong> · <T en="Native" ko="모국어" /></p><p><strong>Spanish</strong> · <T en="Beginner" ko="초급" /></p></div>
+      </div>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.npm-cache/
+.npm-logs/
+.playwright-cli/
+photo-inbox/
+tmp/
+output/
+snapshots/
+astra-rebuild-kit/
+astra-rebuild-kit.zip
+docs/
+AGENTS.md
+kma78lhj-im-not-ai/

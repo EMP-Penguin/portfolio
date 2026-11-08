@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "name": "Hyukjoon John Lee",
+    "defaultLanguage": "en",
+    "publicUrl": "https://emp-penguin.github.io/portfolio/",
+    "email": "HYUKJOON.LEE22@med.yuhs.ac",
+    "linkedin": "https://www.linkedin.com/in/johnhjlee",
+    "portrait": "assets/Portrait.jpg",
+    "cv": "assets/CV_Hyukjoon_John_Lee.pdf",
+    "qrPng": "assets/portfolio-qr.png",
+    "qrSvg": "assets/portfolio-qr.svg",
+    "doNotExpose": [
+      "phone number"
+    ]
+  },
+  "shared": {
+    "education": [
+      {
+        "period": "2024.03 - Present",
+        "institution": "Yonsei University College of Medicine",
+        "location": "Seoul, Korea"
+      },
+      {
+        "period": "2018.03 - 2022.03",
+        "institution": "Korea Military Academy (KMA)",
+        "location": "Seoul, Korea"
+      }
+    ],
+    "honors": [
+      {
+        "date": "2022.02",
+        "key": "academicExcellence"
+      },
+      {
+        "date": "2022.02",
+        "key": "bolivianArmyAward"
+      }
+    ],
+    "clinicalExperience": {
+      "period": "2025.01.16 - 2025.01.24",
+      "title": "Sub-Internship, Trauma Surgery",
+      "organization": "Uijeongbu St. Mary's Hospital, Korea"
+    },
+    "leadership": [
+      {
+        "period": "2022.06 - 2024.02",
+        "key": "platoonLeader",
+        "organization": "Republic of Korea Army"
+      },
+      {
+        "period": "2026.01 - Present",
+        "key": "studentCouncil",
+        "organization": "Yonsei University College of Medicine"
+      }
+    ],
+    "activities": [
+      {
+        "date": "2023.10",
+        "key": "adexInterpreter",
+        "organization": "ADEX (Aerospace & Defense Exhibition of Korea)"
+      },
+      {
+        "date": "2025.07",
+        "key": "symposiumObserver",
+        "organization": "1st Symposium of Emergency Surgery Research Society"
+      },
+      {
+        "date": "2025.08",
+        "key": "legacyVolunteer",
+        "organization": "Korea Legacy Committee"
+      }
+    ],
+    "languages": [
+      {
+        "name": "English",
+        "scores": "TOEFL 100 (2026.04.18) · TOEIC 975 (2023.09.24) · TEPS 488 (2023.03.21)"
+      },
+      {
+        "name": "Korean"
+      },
+      {
+        "name": "Spanish"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "documentTitle": "Hyukjoon John Lee | Military Medical Profile",
+      "description": "Hyukjoon John Lee - ROK Army Officer and medical student focused on military medicine, trauma care, and AI for healthcare and defense.",
+      "ui": {
+        "navigationAria": "Primary navigation",
+        "languageAria": "Language",
+        "koreanLanguage": "한국어",
+        "englishLanguage": "English",
+        "linkedin": "LinkedIn",
+        "portraitAlt": "Portrait of Hyukjoon John Lee",
+        "continueAria": "Continue to overview",
+        "interestsAria": "Areas of interest",
+        "qrAlt": "QR code for Hyukjoon John Lee's portfolio",
+        "backToTop": "Back to top",
+        "footerCopyright": "© {year} Hyukjoon John Lee"
+      },
+      "nav": {
+        "overview": "Overview",
+        "credentials": "Credentials",
+        "experience": "Experience",
+        "contact": "Contact"
+      },
+      "hero": {
+        "eyebrow": "ROK Army Officer & Medical Student",
+        "focus": "Military Medicine · Trauma Care · AI for Healthcare & Defense",
+        "tagline": "Building stronger military medical systems by connecting clinical practice, operational leadership, and technology.",
+        "viewProfile": "View profile",
+        "downloadCv": "Download CV"
+      },
+      "overview": {
+        "eyebrow": "Profile",
+        "title": "Medicine, military leadership, and technology in one mission.",
+        "paragraphs": [
+          "I am a medical student and Republic of Korea Army officer interested in trauma surgery, surgical critical care, and trauma systems.",
+          "My work is shaped by both clinical training and operational leadership.",
+          "I aim to contribute to military medical systems that make better decisions under pressure, coordinate teams effectively, and use AI responsibly across healthcare and defense."
+        ],
+        "interests": [
+          "Trauma Surgery",
+          "Surgical Critical Care",
+          "Trauma Systems",
+          "AI for Healthcare & Defense"
+        ]
+      },
+      "credentials": {
+        "eyebrow": "Credentials",
+        "title": "Education and recognition",
+        "education": "Education",
+        "honors": "Honors & Awards",
+        "academicExcellence": {
+          "title": "Academic Excellence Award",
+          "body": "Department of Applied Physics, Korea Military Academy"
+        },
+        "bolivianArmyAward": {
+          "title": "Bolivian Army Commander's Award",
+          "body": "Award for Academic Excellence"
+        }
+      },
+      "experience": {
+        "eyebrow": "Experience",
+        "title": "Clinical practice and operational leadership",
+        "clinicalLabel": "Clinical Experience",
+        "clinicalBody": "Participated in trauma resuscitations, surgical rounds, and perioperative patient care. Observed multidisciplinary trauma evaluation and emergency surgical decision-making.",
+        "leadershipLabel": "Leadership Activities",
+        "platoonLeader": "Platoon Leader & Intelligence Officer",
+        "studentCouncil": "Student Council Member"
+      },
+      "activities": {
+        "eyebrow": "Beyond the curriculum",
+        "title": "Service, research, and international communication",
+        "adexInterpreter": "Interpreter Officer",
+        "symposiumObserver": "Observer",
+        "legacyVolunteer": "Elderly Poverty Relief Volunteer Service",
+        "languageLabel": "Language Skills",
+        "englishLevel": "Fluent · Professional working proficiency in medical settings",
+        "koreanLevel": "Native",
+        "spanishLevel": "Beginner"
+      },
+      "contact": {
+        "eyebrow": "Contact",
+        "title": "Good to meet you. Let's keep in touch.",
+        "body": "I'm always glad to talk about medicine, people, books, running, and the ideas that connect them. Email or find me online.",
+        "email": "Email me",
+        "share": "Share this profile"
+      }
+    },
+    "ko": {
+      "documentTitle": "Hyukjoon John Lee | 군의료 프로필",
+      "description": "군진의학, 외상의학, AI에 관심을 둔 대한민국 육군 장교이자 의대생 Hyukjoon John Lee의 포트폴리오입니다.",
+      "ui": {
+        "navigationAria": "주요 메뉴",
+        "languageAria": "언어 선택",
+        "koreanLanguage": "한국어",
+        "englishLanguage": "English",
+        "linkedin": "LinkedIn",
+        "portraitAlt": "Hyukjoon John Lee 프로필 사진",
+        "continueAria": "소개 섹션으로 이동",
+        "interestsAria": "관심 분야",
+        "qrAlt": "Hyukjoon John Lee 포트폴리오 QR 코드",
+        "backToTop": "맨 위로",
+        "footerCopyright": "© {year} Hyukjoon John Lee"
+      },
+      "nav": {
+        "overview": "소개",
+        "credentials": "학력·수상",
+        "experience": "경험",
+        "contact": "연락처"
+      },
+      "hero": {
+        "eyebrow": "대한민국 육군 장교 및 의대생",
+        "focus": "군진의학, 외상의학, AI",
+        "tagline": "국가와 국민에 헌신하는 사람을 살리는 일을 합니다.",
+        "viewProfile": "프로필 보기",
+        "downloadCv": "CV 다운로드"
+      },
+      "overview": {
+        "eyebrow": "소개",
+        "title": "작전 현장 속 의무지원을 고민합니다",
+        "paragraphs": [
+          "임상 현장의 지식과 군사적 지식을 함께 쌓아가고 있습니다.",
+          "단순히 병원에서의 지식이 아니라, 전술적, 작전적 차원에서의 의무지원을 고민합니다.",
+          "기술을 통해 의무지원의 혁신을 이끌어내고자 합니다."
+        ],
+        "interests": [
+          "외상외과",
+          "외과계 중환자 진료",
+          "외상 체계",
+          "헬스케어·국방 AI"
+        ]
+      },
+      "credentials": {
+        "eyebrow": "학력과 수상",
+        "title": "교육과 성취",
+        "education": "학력",
+        "honors": "수상",
+        "academicExcellence": {
+          "title": "학업 우수상",
+          "body": "육군사관학교 응용물리학과"
+        },
+        "bolivianArmyAward": {
+          "title": "볼리비아 육군참모총장상",
+          "body": "학업 우수 부문"
+        }
+      },
+      "experience": {
+        "eyebrow": "경험",
+        "title": "임상 현장과 작전 리더십",
+        "clinicalLabel": "임상 경험",
+        "clinicalBody": "외상 환자 소생, 외과 회진, 수술 전후 환자 관리에 참여했습니다. 다학제 외상 평가와 응급 수술 의사결정 과정을 관찰했습니다.",
+        "leadershipLabel": "리더십 활동",
+        "platoonLeader": "소대장 및 정보장교",
+        "studentCouncil": "학생회 교육정책국원"
+      },
+      "activities": {
+        "eyebrow": "교과 외 활동",
+        "title": "봉사와 연구, 국제 커뮤니케이션",
+        "adexInterpreter": "통역장교",
+        "symposiumObserver": "옵저버",
+        "legacyVolunteer": "노인 빈곤 해결 봉사",
+        "languageLabel": "언어 능력",
+        "englishLevel": "유창 · 의료 환경에서 전문 업무 소통 가능",
+        "koreanLevel": "모국어",
+        "spanishLevel": "초급"
+      },
+      "contact": {
+        "eyebrow": "연락처",
+        "title": "반갑습니다. 편하게 이야기 나눠요.",
+        "body": "의학과 사람을 살리는 일, 책과 달리기, 그 사이를 잇는 생각들에 관해 이야기 나누고 싶습니다. 이메일이나 SNS에서 만나요.",
+        "email": "이메일 보내기",
+        "share": "프로필 공유"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import PhotoStrip from '../components/PhotoStrip.astro';
+import photos from '../data/selected-photos.json';
+const base = import.meta.env.BASE_URL;
+---
+<Base page="exploration" titleEn="Hyukjoon John Lee | Exploration" titleKo="이혁준 | Exploration" descriptionEn="Running, jazz, community, reading and writing." descriptionKo="달리기와 재즈, 사람들과 함께하는 시간, 읽고 쓰는 기록.">
+  <div class="page-wrap interior-page exploration-page">
+    <div class="eyebrow">PERSONAL INTERESTS</div>
+    <div class="page-heading"><h1>Exploration</h1><p><T en="Things I return to, explore, and enjoy." ko="좋아하는 것을 찾아가고 이어온 기록입니다." /></p></div>
+    <section class="explore-row"><div class="explore-gallery running-gallery"><PhotoStrip photos={photos.running} label="마라톤 사진" /></div><div><div class="explore-label">01 / RUNNING</div><h2>Running</h2><p><T en="I have completed three full marathons and continue to find joy in running." ko="풀 마라톤을 세 차례 완주했습니다. 달리며 보낸 시간과 기록을 모읍니다." /></p></div></section>
+    <section class="explore-row"><div class="explore-gallery jazz-gallery"><div class="explore-label">02 / JAZZ</div><PhotoStrip photos={photos.jazz} label="재즈 공연과 재즈바 사진" /></div><div><h2>Jazz</h2><p><T en="I love jazz and want to understand the music more deeply." ko="재즈를 좋아합니다. 연주자마다, 매 순간 달라지는 음악을 더 깊이 이해하고 싶습니다." /></p><a class="secondary-link" href={`${base}thoughts/live-jazzy/`}><T en="Read the story" ko="째—지하게 살고 싶다" /> →</a></div></section>
+    <section class="explore-row explore-reverse"><div class="explore-gallery"><PhotoStrip photos={[...photos.community, photos.medted[1]]} label="함께 배우고 나눈 모임과 MedTED 발표 사진" /></div><div><div class="explore-label">03 / COMMUNITY</div><h2>Building Community</h2><p><T en="I enjoy bringing people together to learn, share, and reflect." ko="사람들이 함께 배우고 이야기할 수 있는 자리를 만드는 것을 좋아합니다." /></p></div></section>
+    <section class="explore-row"><div class="explore-gallery reading-gallery"><PhotoStrip photos={photos.reading} label="읽기와 모임 사진" /></div><div><div class="explore-label">04 / NOTES</div><h2>Reading &amp; Writing</h2><p><T en="Notes on reading, exploring, and finding what interests me." ko="읽고 탐험하며 관심사를 찾아가는 과정을 글로 남깁니다." /></p><a class="secondary-link" href={`${base}thoughts/`}><T en="Read the journal" ko="글 읽기" /> →</a></div></section>
+  </div>
+</Base>

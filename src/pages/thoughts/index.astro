@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import { categories } from '../../data/categories';
+
+const base = import.meta.env.BASE_URL;
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const index = posts.map(post => ({ id: post.id, title: post.data.title, description: post.data.description, body: post.body || '', category: post.data.category }));
+---
+<Base page="thoughts" titleEn="Hyukjoon John Lee | Thoughts" titleKo="Hyukjoon John Lee | 글" descriptionEn="Notes on trauma care, military medicine, and questions worth thinking through." descriptionKo="외상 진료, 군진의학, 계속 생각해 볼 질문에 대한 글.">
+  <div class="page-wrap interior-page thoughts-page">
+    <div class="eyebrow"><span class="serial">03 / 04</span><T en="WRITINGS & NOTES" ko="글과 기록" /></div>
+    <div class="page-heading thoughts-heading"><h1><T en="Thoughts" ko="생각" /></h1><p><T en="Following the questions that make me pause, look closer, and keep exploring." ko="좋고 싫은 감정에서 출발해 삶의 리듬과 습관, 배우고 싶은 태도를 기록합니다." /></p></div>
+    <div class="thoughts-tools">
+      <label class="search-label" for="thought-search"><T en="Search writing" ko="글 검색" /></label>
+      <div class="search-field"><span aria-hidden="true" class="search-icon">⌕</span><input id="thought-search" type="search" autocomplete="off" placeholder="Search titles and text" data-placeholder-en="Search titles and text" data-placeholder-ko="제목과 본문 검색" /><kbd>/</kbd></div>
+      <div class="category-row" role="group" aria-label="Filter by category" data-aria-en="Filter by category" data-aria-ko="카테고리로 필터링">
+        <button type="button" data-category="all" aria-pressed="true"><T en="All" ko="전체" /></button>
+        {categories.map(category => <button type="button" data-category={category.id} aria-pressed="false"><T en={category.en} ko={category.ko} /></button>)}
+      </div>
+    </div>
+    <div class="thoughts-count" aria-live="polite" data-results-count></div>
+    <div class="post-list" data-post-list>
+      {posts.map((post, index) => {
+        const category = categories.find(item => item.id === post.data.category)!;
+        return <article class="post-preview" data-post-id={post.id}>
+          <div class="post-side"><span class="post-number">{String(index + 1).padStart(2, '0')}</span><time datetime={post.data.date.toISOString().slice(0, 10)}>{post.data.date.toISOString().slice(0, 10)}</time></div>
+          <div class="post-preview-main"><div class="post-meta"><span data-en={category.en} data-ko={category.ko}>{category.en}</span><span class="meta-separator">/</span><span>{post.data.language.toUpperCase()}</span></div><h2><a href={`${base}thoughts/${post.id}/`}>{post.data.title}<span aria-hidden="true">↗</span></a></h2><p>{post.data.description}</p></div>
+        </article>;
+      })}
+    </div>
+    <div class="empty-state" data-empty-all hidden><span>—</span><p><T en="A notebook for the things that make me curious." ko="호오를 따라 모으는 생각의 노트입니다." /></p><small><T en="New writing will appear here. In the meantime, visit my Naver Blog and Instagram." ko="새 글을 이곳에 기록하겠습니다. 그동안 네이버 블로그와 인스타그램에서 더 만나보세요." /></small><p class="thoughts-social-links"><a href="https://blog.naver.com/heock_yi" target="_blank" rel="noopener noreferrer">Naver Blog ↗</a><a href="https://www.instagram.com/heock_yi/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></p></div>
+    <div class="empty-state" data-empty-search hidden><span>⌕</span><p><T en="No writing matched your search." ko="검색 결과가 없습니다." /></p><small><T en="Try another word or choose a different category." ko="다른 단어 또는 카테고리로 다시 찾아보세요." /></small></div>
+    <script type="application/json" id="post-search-index" set:html={JSON.stringify(index).replace(/</g, '\\u003c')}></script>
+    <script src="../../scripts/thoughts.ts"></script>
+  </div>
+</Base>

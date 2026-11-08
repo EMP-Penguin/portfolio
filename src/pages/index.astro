@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import content from '../data/content.json';
+const base = import.meta.env.BASE_URL;
+---
+<Base page="overview" titleEn="Hyukjoon John Lee | Overview" titleKo="Hyukjoon John Lee | 소개" descriptionEn={content.translations.en.description} descriptionKo={content.translations.ko.description}>
+  <section class="overview-page page-wrap" aria-labelledby="overview-title">
+    <div class="overview-copy">
+      <div class="eyebrow"><span class="serial">01 / 04</span><T en="PERSONAL PROFILE" ko="소개" /></div>
+      <h1 id="overview-title">Hyukjoon<br />John Lee<span class="period">.</span></h1>
+      <p class="role"><T en="Hyukjoon Lee · Explorer of curiosities" ko="이혁준 · 호오탐험가 @heock_yi" /></p>
+      <div class="summary">
+        <p class="summary-lead"><T en="I work to save lives." ko="사람을 살리는 일을 합니다." /></p>
+        <p><T en="I read, run, explore new places, and write down what I learn along the way. As an Army officer and medical student, I am learning how to help care reach people when it matters most." ko="읽고, 달리고, 낯선 곳을 걸으며 배운 것을 기록합니다. 육군 장교이자 의대생으로 사람을 살리는 일을 배워갑니다." /></p>
+      </div>
+      <div class="overview-actions">
+        <a class="primary-link" href={`${base}about/`}>About <span aria-hidden="true">→</span></a>
+        <a class="secondary-link" href={`${base}experience/`}>Experiences <span aria-hidden="true">→</span></a>
+        <a class="secondary-link" href={`${base}exploration/`}>Exploration <span aria-hidden="true">→</span></a>
+        <a class="secondary-link" href={`${base}cv/`}>CV <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="interest-line"><span class="small-rule"></span><T en="Reading · Running · Exploring" ko="읽고 · 달리고 · 탐험하기" /></div>
+    </div>
+    <figure class="portrait-composition">
+      <div class="portrait-frame"><img src={`${base}assets/portrait-bw-cutout.png`} width="532" height="823" alt="Portrait of Hyukjoon John Lee" data-alt-en="Portrait of Hyukjoon John Lee" data-alt-ko="이혁준의 인물 사진" fetchpriority="high" /></div>
+      <figcaption><span>HYUKJOON JOHN LEE</span></figcaption>
+    </figure>
+  </section>
+</Base>

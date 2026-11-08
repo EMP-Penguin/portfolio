@@ -1,0 +1,57 @@
+{
+  "army": [
+    "assets/selected-photos/army-1.jpg",
+    "assets/selected-photos/army-2.jpg"
+  ],
+  "tccc": [
+    "assets/selected-photos/tccc-1.jpg",
+    "assets/selected-photos/tccc-2.jpg"
+  ],
+  "academic": [
+    "assets/selected-photos/academic-1.jpg",
+    "assets/selected-photos/academic-2.jpg",
+    "assets/selected-photos/academic-3.jpg"
+  ],
+  "d4d": [
+    "assets/selected-photos/d4d-1.jpg",
+    "assets/selected-photos/d4d-2.jpg"
+  ],
+  "bootcamp": [
+    "assets/selected-photos/bootcamp-1.jpg",
+    "assets/selected-photos/bootcamp-2.jpg"
+  ],
+  "anatomy": [
+    "assets/selected-photos/anatomy-1.jpg",
+    "assets/selected-photos/anatomy-2.jpg",
+    "assets/selected-photos/anatomy-3.jpg"
+  ],
+  "jazz": [
+    "assets/selected-photos/jazz-1.jpg",
+    "assets/selected-photos/jazz-2.jpg",
+    "assets/selected-photos/jazz-3.jpg"
+  ],
+  "medted": [
+    "assets/selected-photos/medted-1.jpg",
+    "assets/selected-photos/medted-2.png"
+  ],
+  "volunteer": [
+    "assets/selected-photos/volunteer-1.jpg",
+    "assets/selected-photos/volunteer-2.jpg"
+  ],
+  "community": [
+    "assets/selected-photos/community-1.jpg"
+  ],
+  "reading": [
+    "assets/selected-photos/reading-1.jpg",
+    "assets/selected-photos/reading-2.jpg"
+  ],
+  "running": [
+    "assets/selected-photos/running-1.jpg",
+    "assets/selected-photos/running-2.jpg",
+    "assets/selected-photos/running-3.jpg"
+  ],
+  "trauma": [
+    "assets/selected-photos/trauma-1.jpg",
+    "assets/selected-photos/trauma-2.jpg"
+  ]
+}

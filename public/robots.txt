@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emp-penguin.github.io/portfolio/sitemap.xml

@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base page="about" titleEn="Hyukjoon John Lee | About" titleKo="이혁준 | About" descriptionEn="My story and interests." descriptionKo="이혁준이 걸어온 길과 관심사.">
+  <section id="about" class="page-wrap interior-page about-section">
+    <div class="eyebrow">ABOUT</div>
+    <div class="page-heading"><h2>About</h2></div>
+    <div class="about-body">
+      <p><T en="I graduated from the Korea Military Academy in 2022, was commissioned as an Army officer, and served with the 1st Security Group. I now study at Yonsei University College of Medicine as an Army-sponsored student." ko="2022년 육군사관학교를 졸업하고 육군 장교로 임관했습니다. 1경비단에서 복무한 뒤 현재 연세대학교 의과대학에서 군위탁생으로 공부하고 있습니다." /></p>
+      <p><T en="My interest in TCCC began as a cadet and led me to instructor training. It grew into an interest in saving lives and treating battlefield trauma. I have since pursued clinical learning in trauma surgery and continue to explore the field." ko="생도 시절 TCCC에 관심을 갖고 직접 교관과정을 건의해 교관이 되었습니다. 사람을 살리는 일과 전장에서 발생하는 외상에 대한 관심은 의대 위탁교육으로 이어졌습니다. 이후 외상외과 서브인턴십과 학회에 참여하며 배우고 있고, STC 옵저버십을 준비하고 있습니다." /></p>
+      <p><T en="I am also curious about AI and data science, and enjoy reading, running, exploring, and listening to jazz." ko="AI와 데이터과학에도 관심이 있어 해커톤과 교육에 참여했습니다. 읽고, 달리고, 새로운 곳을 탐험하는 것을 좋아하며 재즈를 즐겨 듣습니다." /></p>
+      <a class="secondary-link" href={`${base}contacts/`}><T en="Get in touch" ko="연락하기" /> →</a>
+    </div>
+  </section>
+</Base>
