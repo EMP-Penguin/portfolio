@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
       <p class="role"><T en="Hyukjoon Lee · Explorer of curiosities" ko="이혁준 · 호오탐험가 @heock_yi" /></p>
       <div class="summary">
         <p class="summary-lead"><T en="I work to save lives." ko="사람을 살리는 일을 합니다." /></p>
-        <p><T en="I read, run, explore new places, and write down what I learn along the way. As an Army officer and medical student, I am learning how to help care reach people when it matters most." ko="읽고, 달리고, 낯선 곳을 걸으며 배운 것을 기록합니다. 육군 장교이자 의대생으로 사람을 살리는 일을 배워갑니다." /></p>
+        <p><T en="I read, run, and walk through unfamiliar places, writing down what I learn." ko="읽고, 달리고, 낯선 곳을 걸으며 배운 것을 기록합니다." /><br /><T en="As an Army officer and medical student, I am learning how to save lives." ko="육군 장교이자 의대생으로 사람을 살리는 일을 배워갑니다." /></p>
       </div>
       <div class="overview-actions">
         <a class="primary-link" href={`${base}about/`}>About <span aria-hidden="true">→</span></a>
@@ -20,7 +20,7 @@ const base = import.meta.env.BASE_URL;
         <a class="secondary-link" href={`${base}exploration/`}>Exploration <span aria-hidden="true">→</span></a>
         <a class="secondary-link" href={`${base}cv/`}>CV <span aria-hidden="true">→</span></a>
       </div>
-      <div class="interest-line"><span class="small-rule"></span><T en="Reading · Running · Exploring" ko="읽고 · 달리고 · 탐험하기" /></div>
+      <div class="interest-line"><span class="small-rule"></span><a href={`${base}contacts/`}><T en="Contact" ko="연락하기" /> <span aria-hidden="true">→</span></a></div>
     </div>
     <figure class="portrait-composition">
       <div class="portrait-frame"><img src={`${base}assets/portrait-bw-cutout.png`} width="532" height="823" alt="Portrait of Hyukjoon John Lee" data-alt-en="Portrait of Hyukjoon John Lee" data-alt-ko="이혁준의 인물 사진" fetchpriority="high" /></div>
